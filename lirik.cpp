@@ -18,7 +18,7 @@ void printLirik() {
         
     };
 
-    // Cetak lirik dengan huruf muncul satu per satu dengan delay yang berbeda
+    // delay for lyrics 
     for (const auto& baris : lirik) {
         const std::string& teks = std::get<0>(baris);
         int delayBaris = std::get<1>(baris);
@@ -35,7 +35,7 @@ void printLirik() {
 }
 
 int main() {
-    // Panggil fungsi untuk mencetak lirik
+    // Print Lyrics
     printLirik();
     return 0;
 }
