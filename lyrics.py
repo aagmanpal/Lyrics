@@ -8,8 +8,8 @@ def play_audio():
     playsound('blue song audio.mp3')
     
 
-def print_lirik():
-    lirik = [
+def print_lyric():
+    lyric = [
         ("", 5, 0.0),
         ("Your morning eyes, I could stare like watching stars", 2, 0.1),
         ("I could walk you by, and I'll tell without a thought", 1, 0.1),
@@ -42,15 +42,15 @@ def print_lirik():
         ("Will you be forever with me?", 1.9, 0.1),
     ]
 
-    for teks, delay_baris, delay_huruf in lirik:
-        for c in teks:
+    for lines, delay_line, delay_char in lyric:
+        for c in lines:
             print(c, end='', flush=True)
-            time.sleep(delay_huruf)
+            time.sleep(delay_char)
         print()
-        time.sleep(delay_baris)
+        time.sleep(delay_line)
 
 if __name__ == "__main__":
     audio_thread = threading.Thread(target=play_audio)
     audio_thread.daemon = False  # Ensure thread stops when main program exits
     audio_thread.start()
-    print_lirik()
+    print_lyric()
